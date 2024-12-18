@@ -1,0 +1,35 @@
+{
+    "name": "CIN-Card-API",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "editor.formatOnSave": true,
+                "python.linting.enabled": true,
+                "python.linting.pylintEnabled": true,
+                "python.pythonPath": "/usr/local/bin/python",
+                "remote.autoForwardPorts": true,
+                "remote.SSH.remotePlatform": {
+                    "Linux": "linux"
+                }
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance"
+            ]
+        }
+    },
+    "forwardPorts": [8000],
+    "remoteUser": "root",
+    "shutdownAction": "stopContainer",
+    "hostRequirements": {
+        "cpus": 2,
+        "memory": "4gb"
+    },
+    "remoteEnv": {
+        "PYTHONUNBUFFERED": "1"
+    }
+}
